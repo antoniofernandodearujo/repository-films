@@ -1,7 +1,7 @@
 import axios from "axios"; // Importa a biblioteca axios para fazer requisições HTTP
 
 class UserAPI {
-  private apiUrl = 'http://localhost:8080/api/usuarios'; // URL base da API de usuários
+  private apiUrl = 'repository-films-production.up.railway.app/api/usuarios'; // URL base da API de usuários
 
   // Método para registrar um novo usuário
   async register(data: { name: string; email: string; password: string }) {
