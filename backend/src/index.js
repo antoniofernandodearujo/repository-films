@@ -22,7 +22,12 @@ const config_1 = __importDefault(require("./db/config"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 8080;
 // Middleware para habilitar CORS
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+}));
 // Middleware para parsear o corpo das requisições como JSON
 app.use(body_parser_1.default.json());
 // Rotas da aplicação

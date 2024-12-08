@@ -1,7 +1,7 @@
 import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
 
 class ScoreAPI {
-    private apiUrl = 'repository-films-production.up.railway.app/api/avaliacoes'; // URL base da API
+    private apiUrl = 'http://repository-films-production.up.railway.app/api/avaliacoes'; // URL base da API
 
     // Função para criar uma nova avaliação
     async createScore(data: { score: number; filmeId: string; usuarioId: string, comentario?: string }) {

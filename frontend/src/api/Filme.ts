@@ -4,7 +4,7 @@ import { Movie } from "@/types/movieTypes";
 
 // Classe para interagir com a API de filmes
 export default class FilmeAPI {
-  private apiUrl = 'repository-films-production.up.railway.app/api/filmes';
+  private apiUrl = 'http://repository-films-production.up.railway.app/api/filmes';
 
   // Método para listar todos os filmes
   async list() {

@@ -8,6 +8,7 @@ import PasswordInput from './PasswordInput';
 import Button from '../Button';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import User from '@/api/User';
 
 type SignupFormValues = z.infer<typeof signupSchema>;
 
@@ -24,9 +25,8 @@ export default function FormSignUp() {
   // Função de envio do formulário de cadastro
   const onSubmit = async (data: SignupFormValues) => {
     try {
-      const response = await axios.post('/register', data, {
-        headers: { 'Content-Type': 'application/json' },
-      });
+      const register = new User();
+      const response = await register.register(data);
 
       if(response.status !== 201) {
         throw new Error('Erro ao cadastrar. Tente novamente.');
